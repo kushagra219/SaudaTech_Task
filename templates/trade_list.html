@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade List</title>
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1 align="center"><strong><u>TRADE LIST</u></strong></h1>
+        <br> <br>
+        <ul class="list-group">
+            {% for obj in data %}
+            <li class="list-group-item">
+                <button class="btn btn-primary">{{ obj.status }}</button>
+                <p></p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>BUYER</strong>
+                        <p></p>
+                        {{ obj.buyer }}
+                    </div>
+                    <div class="col-md-4">
+                        <strong>STATION</strong>
+                        <p></p>
+                        {{ obj.station }}
+                    </div>
+                    <div class="col-md-4">
+                        <strong>SHIPMENT</strong>
+                        <p></p>
+                        {{ obj.shipment }}
+                    </div>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>TYPE</strong>
+                        <p></p>
+                        {{ obj.type }}
+                    </div>
+                    <div class="col-md-4">
+                        <strong>RATE</strong>
+                        <p></p>
+                        {{ obj.rate }} {{ obj.rateUnit }}
+                    </div>
+                    <div class="col-md-4">
+                        <strong>QUANTITY</strong>
+                        <p></p>
+                        {{ obj.quantity }} {{ obj.quantityUnit }}
+                    </div>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>QUALITY</strong>
+                        <p></p>
+                        {{ obj.quality }}
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
